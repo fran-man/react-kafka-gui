@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class TopicRow extends React.Component {
+  render(){
+    return(<tr>
+      <td>Row Info: {this.props.content}</td>
+  </tr>)
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class TableRows extends React.Component {
+  render(){
+    const rows = []
+
+    for(let i = 1; i< 10; i++){
+      rows.push(<TopicRow content={i} />)
+    }
+
+    return(rows)
+  }
+}
+
+ReactDOM.render(
+  <div>
+    <table>
+     <TableRows />
+    </table>
+  </div>,
+     document.getElementById('root'));
