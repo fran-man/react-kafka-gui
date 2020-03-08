@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './Button.js'
+import ButtonCell from './ButtonCell.js'
 import './index.css';
 
 
@@ -11,7 +11,7 @@ class TopicRow extends React.Component {
           <td>TODO</td>
           <td>TODO</td>
           <td>TODO</td>
-          <td><Button/>TODO</td>
+          <ButtonCell/>
           </tr>)
   }
 }
