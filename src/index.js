@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Button from './Button.js'
 import './index.css';
+
 
 class TopicRow extends React.Component {
   render(){
     return(<tr>
-      <td>Row Info: {this.props.content}</td>
-  </tr>)
+          <td>Row Info: {this.props.content}</td>
+          <td>TODO</td>
+          <td>TODO</td>
+          <td>TODO</td>
+          <td><Button/>TODO</td>
+          </tr>)
+  }
+}
+
+class TopicHeader extends React.Component {
+  render(){
+    return(<tr>
+          <th>Topic Name</th>
+          <th>Number of Partitions</th>
+          <th>Number of Events</th>
+          <th>TTL</th>
+          <th>Send an Event!</th>
+          </tr>)
   }
 }
 
@@ -14,7 +32,9 @@ class TableRows extends React.Component {
   render(){
     const rows = []
 
-    for(let i = 1; i< 10; i++){
+    rows.push(<TopicHeader/>)
+
+    for(let i = 1; i < 10; i++){
       rows.push(<TopicRow content={i} />)
     }
 
