@@ -7,7 +7,7 @@ import './index.css';
 class TopicRow extends React.Component {
   render(){
     return(<tr>
-          <td>Row Info: {this.props.content}</td>
+          <td>{this.props.topicName}</td>
           <td>TODO</td>
           <td>TODO</td>
           <td>TODO</td>
@@ -29,18 +29,33 @@ class TopicHeader extends React.Component {
 }
 
 class TableRows extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {topics: topics};
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:8082/topics')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({topics: data})
+    })
+  }
+
   render(){
     const rows = []
 
     rows.push(<TopicHeader/>)
 
-    for(let i = 1; i < 10; i++){
-      rows.push(<TopicRow content={i} />)
+    for(let i = 0; i < this.state.topics.length; i++){
+      rows.push(<TopicRow topicName={ this.state.topics[i] } />)
     }
 
     return(rows)
   }
 }
+
+const topics = ["TopicA","TopicB","TopicC","TopicD","TopicE"]
 
 ReactDOM.render(
   <div>
