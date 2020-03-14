@@ -18,7 +18,7 @@ class TopicRow extends React.Component {
 
   render(){
     return(<tr>
-          <td>{ this.props.topicName }</td>
+          <td>{ this.state.topic }</td>
           <td>{ this.state.topicPartitions }</td>
           <td>TODO</td>
           <td>TODO</td>
