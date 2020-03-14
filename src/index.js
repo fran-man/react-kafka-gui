@@ -1,20 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ButtonCell from './ButtonCell.js'
+import TopicRow from './TopicRow.js'
 import './index.css';
-
-
-class TopicRow extends React.Component {
-  render(){
-    return(<tr>
-          <td>{this.props.topicName}</td>
-          <td>TODO</td>
-          <td>TODO</td>
-          <td>TODO</td>
-          <ButtonCell/>
-          </tr>)
-  }
-}
 
 class TopicHeader extends React.Component {
   render(){
@@ -55,7 +42,7 @@ class TableRows extends React.Component {
   }
 }
 
-const topics = ["TopicA","TopicB","TopicC","TopicD","TopicE"]
+const topics = []
 
 ReactDOM.render(
   <div>
